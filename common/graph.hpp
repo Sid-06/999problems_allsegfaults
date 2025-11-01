@@ -7,7 +7,6 @@
 
 #include <nlohmann/json.hpp>
 
-
 using json = nlohmann::json;
 ///////////////////////////////////////////////////////////////
 struct Node{
@@ -34,13 +33,17 @@ struct SRTP{
 };
 struct KNN{
     int id;
-    std::string type;
+    std::string mode;
     double lat,lon;
     int k;
     std::string metric;
 };
 class Graph
 {
+private:
+int N;
+std::vector<Node*> Nodes;
+std::vector<std::vector<Edge*>> adj;
 public:
   Graph(const json& graph_json);
   json handleRemoveEdge(const json& query);
