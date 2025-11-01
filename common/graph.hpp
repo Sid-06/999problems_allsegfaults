@@ -33,7 +33,7 @@ struct SRTP{
 };
 struct KNN{
     int id;
-    std::string mode;
+    std::string poi;
     double lat,lon;
     int k;
     std::string metric;
@@ -48,6 +48,6 @@ public:
   Graph(const json& graph_json);
   json handleRemoveEdge(const json& query);
   json handleModifyEdge(const json& query);
-  void handleShortesPath(SRTP sp);
-  void handleKnn(KNN knn);
+  std::vector<int> handleShortesPath(SRTP sp,bool &possible,double & mtbd);
+  std::vector<int> handleKnn(KNN knn);
 };
