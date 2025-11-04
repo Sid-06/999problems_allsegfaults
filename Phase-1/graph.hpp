@@ -1,3 +1,6 @@
+#ifndef GRAPH_H
+#define GRAPH_H
+
 #include<unordered_map>
 #include<vector>
 #include<iostream>
@@ -28,8 +31,14 @@ struct SRTP{
     int source;
     int target;
     std::string mode;
-    std::vector<int> forbidden_nodes;
-    std::vector<int> forbidden_road_types;
+    std::unordered_map<int,bool> forbidden_nodes;
+    std::unordered_map<std::string,bool> forbidden_road_types = {
+    {"expressway",false},
+    {"primary",false},
+    {"secondary",false},
+    {"tertiary",false},
+    {"local",false}
+    };
 };
 struct KNN{
     int id;
@@ -48,6 +57,8 @@ public:
   Graph(const json& graph_json);
   json handleRemoveEdge(const json& query);
   json handleModifyEdge(const json& query);
-  std::vector<int> handleShortesPath(SRTP sp,bool &possible,double & mtbd);
+  std::vector<int>handleShortesPath(SRTP sp,bool &possible,double & mtbd);
+  std::vector<int>Djikstra(SRTP sp, bool &possible, double &mtbd);
   std::vector<int> handleKnn(KNN knn);
+
 };
