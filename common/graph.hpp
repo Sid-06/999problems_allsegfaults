@@ -5,6 +5,7 @@
 #include<queue>
 #include<set>
 
+
 #include <nlohmann/json.hpp>
 
 using json = nlohmann::json;
@@ -31,13 +32,13 @@ struct SRTP{
     std::vector<int> forbidden_nodes;
     std::vector<int> forbidden_road_types;
 };
-struct KNN{
-    int id;
-    std::string poi;
-    double lat,lon;
-    int k;
-    std::string metric;
-};
+// struct KNN{
+//     int id;
+//     std::string poi;
+//     double lat,lon;
+//     int k;
+//     std::string metric;
+// };
 class Graph
 {
 private:
