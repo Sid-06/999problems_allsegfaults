@@ -2,8 +2,7 @@
 #include <string>
 
 
-#pragma once
-#include <string>
+
 
 struct KNN {
     int id;
