@@ -1,6 +1,5 @@
-#ifndef GRAPH_H
-#define GRAPH_H
-
+#pragma once
+#include "srtp.hpp"
 #include<unordered_map>
 #include<vector>
 #include<iostream>
@@ -26,20 +25,7 @@ struct Edge{
     bool oneway;
     std::string road_type;
 };
-struct SRTP{
-    int id;
-    int source;
-    int target;
-    std::string mode;
-    std::unordered_map<int,bool> forbidden_nodes;
-    std::unordered_map<std::string,bool> forbidden_road_types = {
-    {"expressway",false},
-    {"primary",false},
-    {"secondary",false},
-    {"tertiary",false},
-    {"local",false}
-    };
-};
+
 struct KNN{
     int id;
     std::string poi;
