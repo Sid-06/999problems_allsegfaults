@@ -6,6 +6,9 @@
 #include<utility>
 #include<queue>
 #include<set>
+#include "../Phase-2/K_shortest_paths.h"
+#include "../Phase-1/knn.h"
+
 
 #include <nlohmann/json.hpp>
 
@@ -25,13 +28,7 @@ struct Edge{
     bool oneway;
     std::string road_type;
 };
-struct KNN{
-    int id;
-    std::string poi;
-    double lat,lon;
-    int k;
-    std::string metric;
-};
+
 class Graph
 {
 private:
@@ -46,4 +43,6 @@ public:
   std::vector<int> handleShortesPath(SRTP sp,bool &possible,double & mtbd);
   std::vector<int> Djikstra(SRTP sp,bool &possible,double & mtbd);
   std::vector<int> handleKnn(KNN knn);
+  std::vector<std::pair<std::vector<int>,double>> k_shortest_paths_heustirics(KSP_H ksp);
+  std::vector<std::pair<std::vector<int>,double>> k_shortest_paths_exact(KSP_E ksp);
 };
