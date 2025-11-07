@@ -10,9 +10,12 @@
 using json = nlohmann::json;
 ///////////////////////////////////////////////////////////////
 struct Node{
+    private:
     int id;
     double lat,lon;
     std::set<std::string> poi;
+    public:
+    Node(int id,double lat,double lon,std::set<std::string> poi);
 };
 struct Edge{
     int id;
@@ -22,6 +25,8 @@ struct Edge{
     std::vector<double>speed_profile;
     bool oneway;
     std::string road_type;
+    public:
+    Edge(int id,int u,int v,double length,double avg_time,std::vector<double> speed_profile,bool oneway,std::string road_type);
 };
 struct SRTP{
     int id;
@@ -29,7 +34,7 @@ struct SRTP{
     int target;
     std::string mode;
     std::vector<int> forbidden_nodes;
-    std::vector<int> forbidden_road_types;
+    std::unordered_map<std::string,bool> forbidden_road_types = {{"expressway",false},{"primary",false},{"secondary",false},{"teritary",false},{"local",false}};
 };
 struct KNN{
     int id;
@@ -43,11 +48,13 @@ class Graph
 private:
 int N;
 std::vector<Node*> Nodes;
-std::vector<std::vector<Edge*>> adj;
+//std::vector<Edge*> Edges;
+std::vector<std::set<Edge*>> adj;
 public:
   Graph(const json& graph_json);
   json handleRemoveEdge(const json& query);
   json handleModifyEdge(const json& query);
-  std::vector<int> handleShortesPath(SRTP sp,bool &possible,double & mtbd);
+  std::vector<int> handleShortesPath(SRTP sp,bool &possible,double& mtbd);
   std::vector<int> handleKnn(KNN knn);
+  json process_query(const json& query);
 };

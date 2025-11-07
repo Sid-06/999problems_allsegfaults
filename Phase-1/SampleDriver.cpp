@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <chrono>
+#include "../common/graph.hpp"
 /*
     Add other includes that you require, only write code wherever indicated
 */
@@ -15,6 +16,16 @@ int main(int argc, char* argv[]) {
     }
 
     // Read graph from first file
+    std::ifstream graph_file(argv[1]);
+    if (!graph_file.is_open()) {
+        std::cerr << "Failed to open " << argv[1] << std::endl;
+        return 1;
+    }
+    json graph_json;
+    graph_file >> graph_json;
+    graph_file.close();
+
+    Graph graph(graph_json);
     /*
         Add your graph reading and processing code here
         Initialize any classes and data structures needed for query processing
@@ -45,7 +56,7 @@ int main(int argc, char* argv[]) {
 
         // Answer each query replacing the function process_query using 
         // whatever function or class methods that you have implemented
-        json result = process_query(query);
+        json result = graph.process_query(query);
 
         auto end_time = std::chrono::high_resolution_clock::now();
         result["processing_time"] = std::chrono::duration<double, std::milli>(end_time - start_time).count();
