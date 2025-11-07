@@ -12,9 +12,12 @@
 using json = nlohmann::json;
 ///////////////////////////////////////////////////////////////
 struct Node{
+    private:
     int id;
     double lat,lon;
     std::set<std::string> poi;
+    public:
+    Node(int id,double lat,double lon,std::set<std::string> poi);
 };
 struct Edge{
     int id;
@@ -24,6 +27,8 @@ struct Edge{
     std::vector<double>speed_profile;
     bool oneway;
     std::string road_type;
+    public:
+    Edge(int id,int u,int v,double length,double avg_time,std::vector<double> speed_profile,bool oneway,std::string road_type);
 };
 
 struct KNN{
@@ -39,13 +44,10 @@ private:
 int N;
 std::vector<Node*> Nodes;
 std::vector<std::vector<Edge*>> adj;
-std::vector<std::vector<Edge*>> adj_r;
 public:
   Graph(const json& graph_json);
   json handleRemoveEdge(const json& query);
   json handleModifyEdge(const json& query);
-  std::vector<int>handleShortesPath(SRTP sp,bool &possible,double & mtbd);
-  std::vector<int>Djikstra(SRTP sp, bool &possible, double &mtbd);
+  std::vector<int> handleShortesPath(SRTP sp,bool &possible,double & mtbd);
   std::vector<int> handleKnn(KNN knn);
-
 };
