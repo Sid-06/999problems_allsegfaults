@@ -1,3 +1,5 @@
+#pragma once
+#include "srtp.hpp"
 #include<unordered_map>
 #include<vector>
 #include<iostream>
@@ -23,14 +25,6 @@ struct Edge{
     bool oneway;
     std::string road_type;
 };
-struct SRTP{
-    int id;
-    int source;
-    int target;
-    std::string mode;
-    std::vector<int> forbidden_nodes;
-    std::vector<int> forbidden_road_types;
-};
 struct KNN{
     int id;
     std::string poi;
@@ -44,10 +38,12 @@ private:
 int N;
 std::vector<Node*> Nodes;
 std::vector<std::vector<Edge*>> adj;
+std::vector<std::vector<Edge*>> adj_r;
 public:
   Graph(const json& graph_json);
   json handleRemoveEdge(const json& query);
   json handleModifyEdge(const json& query);
   std::vector<int> handleShortesPath(SRTP sp,bool &possible,double & mtbd);
+  std::vector<int> Djikstra(SRTP sp,bool &possible,double & mtbd);
   std::vector<int> handleKnn(KNN knn);
 };

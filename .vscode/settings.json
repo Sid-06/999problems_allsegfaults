@@ -58,9 +58,13 @@
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
     "chrono": "cpp",
+<<<<<<< HEAD
+    "utility": "cpp"
+=======
     "optional": "cpp",
     "format": "cpp",
     "system_error": "cpp",
     "new": "cpp"
+>>>>>>> 276cd33baefccf031fe0284208e0d5da9b51a5d1
   }
 }
