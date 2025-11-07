@@ -39,6 +39,7 @@ private:
 int N;
 std::vector<Node*> Nodes;
 std::vector<std::vector<Edge*>> adj;
+std::vector<std::vector<Edge*>> adj_r;
 public:
   Graph(const json& graph_json);
   json handleRemoveEdge(const json& query);
