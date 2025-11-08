@@ -1,4 +1,4 @@
-#include "../common/graph.hpp"   
+#include "graph.hpp"   
 #include "knn.h"              
 #include <vector>                // for std::vector
 #include <cmath>                 // distance computations

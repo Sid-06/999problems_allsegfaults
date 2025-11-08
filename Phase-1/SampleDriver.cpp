@@ -1,8 +1,9 @@
-#include <common/nlohmann/json.hpp>
+#include "nlohmann/json.hpp"
+#include "nlohmann/json_fwd.hpp"
 #include <iostream>
 #include <fstream>
 #include <chrono>
-#include "../common/graph.hpp"
+#include "graph.hpp"
 /*
     Add other includes that you require, only write code wherever indicated
 */

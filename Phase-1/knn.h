@@ -1,8 +1,6 @@
+#pragma once
 #include <vector>
 #include <string>
-
-
-
 
 struct KNN {
     int id;

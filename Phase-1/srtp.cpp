@@ -45,6 +45,9 @@ std::vector<int> Graph::handleShortesPath(SRTP sp,bool &possible,double & mtbd){
             if(vis_f[u]) continue;
             vis_f[u] = true;
             for(auto &e:adj[u]){
+                if (sp.forbidden_edges.count({u, e->v})) {
+                     continue;
+                    }
                 if(! (sp.forbidden_road_types[e->road_type]) && !sp.forbidden_nodes[e->v])
                 {
                     int v = e->v;
@@ -72,6 +75,9 @@ std::vector<int> Graph::handleShortesPath(SRTP sp,bool &possible,double & mtbd){
         if(vis_r[u]) continue;
         vis_r[u] = true;
         for(auto &e:adj_r[u]){
+            if (sp.forbidden_edges.count({e->v, u})) { 
+                continue;
+                 }
              if(! (sp.forbidden_road_types[e->road_type]) && !sp.forbidden_nodes[e->v])
             {
                 int v = e->v;
@@ -106,36 +112,36 @@ std::vector<int> Graph::handleShortesPath(SRTP sp,bool &possible,double & mtbd){
     return full;
 }
 
-std::vector<int> Graph::Djikstra(SRTP sp,bool &possible,double & mtbd){
-   int n = Nodes.size();
-   std::priority_queue<std::pair<double,int>,int> min_heap;
-   std::vector<int>time(n,INF);
-   std::vector<int>parent(n,-1);
-   time[sp.source]=0;
-   min_heap.push(std::make_pair(0,sp.source));
+// std::vector<int> Graph::Djikstra(SRTP sp,bool &possible,double & mtbd){
+//    int n = Nodes.size();
+//    std::priority_queue<std::pair<double,int>,int> min_heap;
+//    std::vector<int>time(n,INF);
+//    std::vector<int>parent(n,-1);
+//    time[sp.source]=0;
+//    min_heap.push(std::make_pair(0,sp.source));
 
-   while(!min_heap.empty()){
-        auto [t,u] = min_heap.top();
-        min_heap.pop();
-        if(t > time[u]) continue;
-        for(auto &e: adj[u]){
-            if(!sp.forbidden_road_types[e->road_type] && !sp.forbidden_nodes[e->v]){
-                if(e->v == sp.target)possible = true;
-                int v = e->v;
-                double tt = calc_time(t,e.length,e.speed_profile);
-                if(time[v]> time[u]+tt){
-                    time[v] = time[u] + tt;
-                    parent[v] = u;
-                    min_heap.push(std::make_pair(time[v],u));
-            }
-            }
-        }
-   }
-   std::vector<int>path;
-   if(!possible) return path;
-   for(int i = sp.target; i!=-1; i = parent[i]){
-        path.push_back(i);
-   }
-   std::reverse(path.begin(),path.end());
-   return path;
-}
+//    while(!min_heap.empty()){
+//         auto [t,u] = min_heap.top();
+//         min_heap.pop();
+//         if(t > time[u]) continue;
+//         for(auto &e: adj[u]){
+//             if(!sp.forbidden_road_types[e->road_type] && !sp.forbidden_nodes[e->v]){
+//                 if(e->v == sp.target)possible = true;
+//                 int v = e->v;
+//                 double tt = calc_time(t,e.length,e.speed_profile);
+//                 if(time[v]> time[u]+tt){
+//                     time[v] = time[u] + tt;
+//                     parent[v] = u;
+//                     min_heap.push(std::make_pair(time[v],u));
+//             }
+//             }
+//         }
+//    }
+//    std::vector<int>path;
+//    if(!possible) return path;
+//    for(int i = sp.target; i!=-1; i = parent[i]){
+//         path.push_back(i);
+//    }
+//    std::reverse(path.begin(),path.end());
+//    return path;
+// }
