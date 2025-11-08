@@ -55,4 +55,5 @@ public:
   std::vector<int> handleKnn(KNN knn);
   std::vector<std::pair<std::vector<int>,double>> k_shortest_paths_heustirics(KSP_H ksp);
   std::vector<std::pair<std::vector<int>,double>> k_shortest_paths_exact(KSP_E ksp);
+  const std::vector<Node*>& getNodes(){ return Nodes; }
 };
