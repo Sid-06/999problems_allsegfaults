@@ -14,18 +14,29 @@ int main(int argc, char** argv){
     try{
         json graph_json = json::parse(ifs);
         Graph g(graph_json);
+        // SRTP sp;
+        // sp.id = 1;
+        // sp.source = 0;
+        // sp.target = 100;
+        // sp.mode = "distance";
+        //  double mtbd = 0.0;
+        // bool possible = false;
+        KNN kn;
+        kn.id = 1;
+        kn.poi = {""};
+        kn.lat = 18.491497;
+        kn.lon = 83.3510416;
+        kn.k =  18;
+        kn.metric = {"shortest_path"};
 
-        // std::cout << "Parsed OK\n";
-        // std::cout << "Nodes: " << g.getNodeCount() << "\n";
-
-        // // optional: print sample node/edge info using existing helper
-        // g.printSampleData();
-
-        // // lightweight validation: check speed_profile lengths and non-negative values
-        // bool ok = true;
-        // for(size_t u = 0; u < g.getNodeCount() && u < 10; ++u){ /* only sample few nodes */ }
-        // std::cout << (ok ? "Basic validation passed\n" : "Basic validation failed\n");
-    }
+        auto start_time = std::chrono::high_resolution_clock::now();
+        std::vector<int> ans = g.handleKnn(kn);
+        auto end_time = std::chrono::high_resolution_clock::now();
+        std::cout<<std::chrono::duration<double, std::milli>(end_time - start_time).count();
+        for(auto&v:ans){
+            std::cout<<v <<" ";
+        }
+           }
     catch(const json::parse_error &e){
         std::cerr << "JSON parse error: " << e.what() << "\n";
         return 1;

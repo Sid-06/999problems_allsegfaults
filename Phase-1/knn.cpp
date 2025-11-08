@@ -48,7 +48,7 @@ std::vector<int> Graph::handleKnn(KNN knn){
             if(visited[o]) continue;
             visited[o] = true;
 
-            if(Nodes[o]->poi.count(poi) && std::find(final_ids.begin(), final_ids.end(), Nodes[o]->id) == final_ids.end()){
+            if( std::find(final_ids.begin(), final_ids.end(), Nodes[o]->id) == final_ids.end()){
                 final_ids.push_back(Nodes[o]->id);
                 count++;
                 if(count == k) break;
@@ -84,4 +84,3 @@ std::vector<int> Graph::handleKnn(KNN knn){
 
     return final_ids;
 }
-
