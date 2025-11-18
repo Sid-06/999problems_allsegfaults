@@ -9,7 +9,7 @@ KNN_SRC := knn.cpp
 TEST_SRC := test_parser.cpp
 SAMPLE_SRC := SampleDriver.cpp
 
-.PHONY:  parser parser debug asan clean
+.PHONY:  parser  debug asan clean
 
 parser : $(TEST_SRC) $(GRAPH_SRC) $(SRTP_SRC) $(KNN_SRC)
 	$(CXX) $(CXXFLAGS) $(RELEASE_FLAGS) $^ -o $@

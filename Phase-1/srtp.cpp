@@ -18,14 +18,38 @@ double calc_time(double curr_time,double length, std::vector<int>speed_profile)
     }
     return curr_time;
 }
+ std::vector<double> Graph::euclidean_distance_to(int target)  {
+        const double R = 6371.0; // km
+        int n=Nodes.size();
+        std::vector<double> dist(n, std::numeric_limits<double>::infinity());
+        if (target < 0 || target >= n) return dist;
+        const Node* t = Nodes[target];
+        if (!t) return dist;
+
+        auto rad = [](double deg){ return deg * M_PI / 180.0; };
+        double lat2 = rad(t->lat), lon2 = rad(t->lon);
+
+        for (int i = 0; i < n; ++i) {
+            const Node* ni = Nodes[i];
+            if (!ni) continue;
+            double lat1 = rad(ni->lat), lon1 = rad(ni->lon);
+            double dlat = lat2 - lat1, dlon = lon2 - lon1;
+            double a = std::sin(dlat*0.5); a = a*a;
+            double b = std::sin(dlon*0.5); b = b*b;
+            double h = a + std::cos(lat1)*std::cos(lat2)*b;
+            dist[i] = 2.0 * R * std::atan2(std::sqrt(h), std::sqrt(std::max(0.0, 1.0-h)));
+        }
+        return dist;
+    }
+
 
 std::vector<int> Graph::handleShortesPath(SRTP sp,bool &possible,double & mtbd){
     int n = Nodes.size(); possible = false;
     double min_path=INF;
     int meeting_point = -1;
     std::priority_queue<std::pair<double,int>,
-                        std::vector<std::pair<double,int>>,
-                        std::greater<std::pair<double,int>>> h_f,h_r;
+    std::vector<std::pair<double,int>>,
+    std::greater<std::pair<double,int>>> h_f,h_r;
     std::vector<double>d_f(n,INF);
     std::vector<double>d_r(n,INF);
     std::vector<int>parent_f(n,-1);
@@ -36,7 +60,7 @@ std::vector<int> Graph::handleShortesPath(SRTP sp,bool &possible,double & mtbd){
     d_r[sp.target] = 0;
     h_f.push(std::make_pair(0,sp.source));
     h_r.push(std::make_pair(0,sp.target));
-
+    
     while((!h_f.empty() && !h_r.empty())){
         if(h_f.top().first + h_r.top().first >= min_path){ break;}
         if(h_f.top().first <= h_r.top().first){
@@ -46,10 +70,10 @@ std::vector<int> Graph::handleShortesPath(SRTP sp,bool &possible,double & mtbd){
             vis_f[u] = true;
             for(auto &e:adj[u]){
                 if (sp.forbidden_edges.count({u, e->v})) {
-                     continue;
+                    continue;
                     }
-                if(! (sp.forbidden_road_types[e->road_type]) && !sp.forbidden_nodes[e->v])
-                {
+                    if(! (sp.forbidden_road_types[e->road_type]) && !sp.forbidden_nodes[e->v])
+                    {
                     int v = e->v;
                     double length = e->length;
                     if(d_f[v]> d_f[u]+length)
@@ -59,8 +83,8 @@ std::vector<int> Graph::handleShortesPath(SRTP sp,bool &possible,double & mtbd){
                             h_f.push(std::make_pair(d_f[v],v));
                         }
                     
-                    if(vis_r[v]){
-                        possible = true;
+                        if(vis_r[v]){
+                            possible = true;
                         if(d_f[u]+length+d_r[v] < min_path){
                             min_path = d_f[u]+length+d_r[v];
                             meeting_point = v;
@@ -70,15 +94,15 @@ std::vector<int> Graph::handleShortesPath(SRTP sp,bool &possible,double & mtbd){
             }
         }
         else{
-        auto [d,u] = h_r.top(); h_r.pop();
-        if(d>d_r[u]) continue;
-        if(vis_r[u]) continue;
+            auto [d,u] = h_r.top(); h_r.pop();
+            if(d>d_r[u]) continue;
+            if(vis_r[u]) continue;
         vis_r[u] = true;
         for(auto &e:adj_r[u]){
             if (sp.forbidden_edges.count({e->v, u})) { 
                 continue;
-                 }
-             if(! (sp.forbidden_road_types[e->road_type]) && !sp.forbidden_nodes[e->v])
+            }
+            if(! (sp.forbidden_road_types[e->road_type]) && !sp.forbidden_nodes[e->v])
             {
                 int v = e->v;
                 double length = e->length;
@@ -112,8 +136,11 @@ std::vector<int> Graph::handleShortesPath(SRTP sp,bool &possible,double & mtbd){
     return full;
 }
 
+
+
+//////////////////////////////////////////////djikstra time based   
 // std::vector<int> Graph::Djikstra(SRTP sp,bool &possible,double & mtbd){
-//    int n = Nodes.size();
+    //    int n = Nodes.size();
 //    std::priority_queue<std::pair<double,int>,int> min_heap;
 //    std::vector<int>time(n,INF);
 //    std::vector<int>parent(n,-1);
@@ -121,27 +148,124 @@ std::vector<int> Graph::handleShortesPath(SRTP sp,bool &possible,double & mtbd){
 //    min_heap.push(std::make_pair(0,sp.source));
 
 //    while(!min_heap.empty()){
-//         auto [t,u] = min_heap.top();
-//         min_heap.pop();
-//         if(t > time[u]) continue;
-//         for(auto &e: adj[u]){
-//             if(!sp.forbidden_road_types[e->road_type] && !sp.forbidden_nodes[e->v]){
-//                 if(e->v == sp.target)possible = true;
-//                 int v = e->v;
+    //         auto [t,u] = min_heap.top();
+    //         min_heap.pop();
+    //         if(t > time[u]) continue;
+    //         for(auto &e: adj[u]){
+        //             if(!sp.forbidden_road_types[e->road_type] && !sp.forbidden_nodes[e->v]){
+            //                 if(e->v == sp.target)possible = true;
+            //                 int v = e->v;
 //                 double tt = calc_time(t,e.length,e.speed_profile);
 //                 if(time[v]> time[u]+tt){
-//                     time[v] = time[u] + tt;
-//                     parent[v] = u;
-//                     min_heap.push(std::make_pair(time[v],u));
-//             }
-//             }
-//         }
-//    }
-//    std::vector<int>path;
-//    if(!possible) return path;
-//    for(int i = sp.target; i!=-1; i = parent[i]){
+    //                     time[v] = time[u] + tt;
+    //                     parent[v] = u;
+    //                     min_heap.push(std::make_pair(time[v],u));
+    //             }
+    //             }
+    //         }
+    //    }
+    //    std::vector<int>path;
+    //    if(!possible) return path;
+    //    for(int i = sp.target; i!=-1; i = parent[i]){
 //         path.push_back(i);
 //    }
 //    std::reverse(path.begin(),path.end());
 //    return path;
+// }
+///////////////////////////////////////////////////single direction djikstra
+
+std::vector<int> Graph::A_starimpl(SRTP sp, bool &possible, double & mtbd){
+    int n = Nodes.size();
+    possible = false; // Ensure it starts as false
+    
+    std::priority_queue<std::pair<double,int>,
+                        std::vector<std::pair<double,int>>,
+                        std::greater<std::pair<double,int>>> min_heap;
+    
+    std::vector<double> dist(n, INF);
+    std::vector<int> parent(n, -1);
+    
+    // Pre-calculate heuristics
+    std::vector<double> h = euclidean_distance_to(sp.target);
+    
+    dist[sp.source] = 0;
+    // Push Start Node: (f_score, u) -> (0 + h, source)
+    min_heap.push(std::make_pair(dist[sp.source] + h[sp.source], sp.source));
+    
+    while(!min_heap.empty()){
+        auto [d, u] = min_heap.top();
+        min_heap.pop();
+        
+        // ERROR WAS HERE: You must compare d (f-score) vs dist + h (f-score)
+        if (d > dist[u] + h[u]) continue;
+        
+        // If we reached the target, we are done. 
+        if (u == sp.target) {
+            possible = true; // Set your required flag here
+            break;
+        }
+        
+        for(auto &e: adj[u]){
+             if(! (sp.forbidden_road_types[e->road_type]) && !sp.forbidden_nodes[e->v])
+             {
+                 int v = e->v;
+                 double length = e->length;
+                 
+                 // Standard Relaxation
+                 if(dist[v] > dist[u] + length){
+                     dist[v] = dist[u] + length;
+                     parent[v] = u;
+                     // Push new f-score (dist[v] + h[v])
+                     min_heap.push(std::make_pair(dist[v] + h[v], v));
+                 }
+             }
+        }
+    }
+    
+    std::vector<int> path;
+    
+    // Use your 'possible' flag check
+    if(!possible) return path;
+    
+    for(int i = sp.target; i != -1; i = parent[i]){
+        path.push_back(i);
+    }
+    std::reverse(path.begin(), path.end());
+    return path;
+}
+// std::vector<int> Graph::A_starimpl(SRTP sp,bool &possible,double & mtbd){
+//  int n = Nodes.size();
+// std::priority_queue<std::pair<double,int>,
+//                    std::vector<std::pair<double,int>>,
+//                    std::greater<std::pair<double,int>>> min_heap;
+
+// std::vector<double>dist(n,INF);
+// std::vector<int>parent(n,-1);
+// dist[sp.source]=0;
+// min_heap.push(std::make_pair(0,sp.source));
+// while(!min_heap.empty()){
+// auto [d,u] = min_heap.top();
+// min_heap.pop();
+// if(d > dist[u]) continue;
+// for(auto &e: adj[u]){
+//     if(! (sp.forbidden_road_types[e->road_type]) && !sp.forbidden_nodes[e->v])
+//        {
+//          if(e->v == sp.target) possible = true;
+//            int v = e->v;
+//            double length = e->length;
+//             if(dist[v]> dist[u]+length){
+//                dist[v] = dist[u] + length;
+//                parent[v] = u;
+//                 min_heap.push(std::make_pair(dist[v],v));
+//             }
+//            }
+//        }
+//    }
+//    std::vector<int>path;
+//    if(!possible) return path;
+//    for(int i = sp.target; i!=-1; i = parent[i]){
+//        path.push_back(i);
+//    }
+//        std::reverse(path.begin(),path.end());
+//        return path;
 // }

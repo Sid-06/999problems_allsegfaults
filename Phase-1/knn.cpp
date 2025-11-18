@@ -34,13 +34,13 @@ std::vector<int> Graph::handleKnn(KNN knn){
 
         std::vector<std::pair<double,int>> distances;
         for(int i=0;i<this->N;i++){
-            distances.push_back({INF,i+1});
+            distances.push_back({INF,i});
         }
 
         std::vector<bool> visited(N,false);
-        distances[id-1].first = 0.0;
+        distances[id].first = 0.0;
         std::priority_queue< std::pair<double,int>, std::vector<std::pair<double,int>>, std::greater<std::pair<double,int>>> q;
-        q.push({0.0,id-1});
+        q.push({0.0,id});
         int count = 0;
         while(!q.empty()){
             auto [du , o] = q.top();
@@ -57,9 +57,9 @@ std::vector<int> Graph::handleKnn(KNN knn){
             for( auto node : this->adj[o] ){
                 int v = node->v;
                 double w = node->length;
-                if(du + w < distances[v-1].first){
-                    distances[v-1].first = du + w;
-                    q.push({distances[v-1].first,v-1});
+                if(du + w < distances[v].first){
+                    distances[v].first = du + w;
+                    q.push({distances[v].first,v});
                 }
             }
         }

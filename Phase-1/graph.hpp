@@ -11,7 +11,7 @@
 
 
 #include "nlohmann/json.hpp"
-
+#define M_PI 3.14159265358979323846
 using json = nlohmann::json;
 ///////////////////////////////////////////////////////////////
 struct Node{
@@ -57,12 +57,14 @@ public:
   json handleRemoveEdge(const json& query);
   json handleModifyEdge(const json& query);
   std::vector<int> handleShortesPath(SRTP sp,bool &possible,double & mtbd);
+  std::vector<double> euclidean_distance_to(int target); 
 
   std::vector<int> Djikstra(SRTP sp,bool &possible,double & mtbd);
   std::vector<int> handleKnn(KNN knn);
+  std::vector<int> A_starimpl(SRTP sp,bool &possible,double & mtbd);
   std::vector<std::pair<std::vector<int>,double>> k_shortest_paths_heustirics(KSP_H ksp);
   std::vector<std::pair<std::vector<int>,double>> k_shortest_paths_exact(KSP_E ksp);
-  size_t getNodeCount() const { return Nodes.size(); }
+  std::vector<Node*> getNodes(){ return Nodes; }
     
     void printSampleData() const {
         // Print first 5 nodes
@@ -82,4 +84,7 @@ public:
             }
         }
     }
+  
+   
+
 };
