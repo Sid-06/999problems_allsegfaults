@@ -1,7 +1,7 @@
 #include "graph.hpp"
 #include "srtp.hpp"
 #define INF 1000000000
-double calc_time(double curr_time,double length, std::vector<int>speed_profile)
+double calc_time(double curr_time,double length, std::vector<double>speed_profile)
 {
     while(length>0)
     {
@@ -138,42 +138,6 @@ std::vector<int> Graph::handleShortesPath(SRTP sp,bool &possible,double & mtbd){
 
 
 
-//////////////////////////////////////////////djikstra time based   
-// std::vector<int> Graph::Djikstra(SRTP sp,bool &possible,double & mtbd){
-    //    int n = Nodes.size();
-//    std::priority_queue<std::pair<double,int>,int> min_heap;
-//    std::vector<int>time(n,INF);
-//    std::vector<int>parent(n,-1);
-//    time[sp.source]=0;
-//    min_heap.push(std::make_pair(0,sp.source));
-
-//    while(!min_heap.empty()){
-    //         auto [t,u] = min_heap.top();
-    //         min_heap.pop();
-    //         if(t > time[u]) continue;
-    //         for(auto &e: adj[u]){
-        //             if(!sp.forbidden_road_types[e->road_type] && !sp.forbidden_nodes[e->v]){
-            //                 if(e->v == sp.target)possible = true;
-            //                 int v = e->v;
-//                 double tt = calc_time(t,e.length,e.speed_profile);
-//                 if(time[v]> time[u]+tt){
-    //                     time[v] = time[u] + tt;
-    //                     parent[v] = u;
-    //                     min_heap.push(std::make_pair(time[v],u));
-    //             }
-    //             }
-    //         }
-    //    }
-    //    std::vector<int>path;
-    //    if(!possible) return path;
-    //    for(int i = sp.target; i!=-1; i = parent[i]){
-//         path.push_back(i);
-//    }
-//    std::reverse(path.begin(),path.end());
-//    return path;
-// }
-///////////////////////////////////////////////////single direction djikstra
-
 std::vector<int> Graph::A_starimpl(SRTP sp, bool &possible, double & mtbd){
     int n = Nodes.size();
     possible = false; // Ensure it starts as false
@@ -233,6 +197,160 @@ std::vector<int> Graph::A_starimpl(SRTP sp, bool &possible, double & mtbd){
     std::reverse(path.begin(), path.end());
     return path;
 }
+
+std::vector<int> Graph::A_star_time(SRTP sp, bool &possible, double & mtbd){
+      int n = Nodes.size();
+    possible = false;
+    std::priority_queue<std::pair<double,int>,
+        std::vector<std::pair<double,int>>,
+        std::greater<std::pair<double,int>>> min_heap;
+
+    std::vector<double> arr(n, std::numeric_limits<double>::infinity());
+    std::vector<int> parent(n, -1);
+
+    if (sp.source < 0 || sp.source >= n || sp.target < 0 || sp.target >= n)
+        return {};
+
+    arr[sp.source] = 0.0;
+    min_heap.push(std::make_pair(0.0, sp.source));
+
+    while(!min_heap.empty()){
+        auto [t, u] = min_heap.top();
+        min_heap.pop();
+        if (t > arr[u]) continue;
+
+        if (u == sp.target) {
+            possible = true;
+            break;
+        }
+
+        for(auto &e: adj[u]){
+            if (sp.forbidden_road_types.count(e->road_type) && sp.forbidden_road_types[e->road_type]) continue;
+            if (sp.forbidden_nodes.count(e->v) && sp.forbidden_nodes[e->v]) continue;
+
+            // calc_time returns absolute arrival time given current time
+            double arrival = calc_time(arr[u], e->length, e->speed_profile);
+            if (!std::isfinite(arrival)) continue;
+
+            if (arrival < arr[e->v]) {
+                arr[e->v] = arrival;
+                parent[e->v] = u;
+                min_heap.push(std::make_pair(arrival, e->v)); // push v not u
+            }
+        }
+    }
+
+    std::vector<int> path;
+    if (!possible) return path;
+
+    mtbd = arr[sp.target];
+    for (int cur = sp.target; cur != -1; cur = parent[cur]) path.push_back(cur);
+    std::reverse(path.begin(), path.end());
+    return path;
+}
+
+
+
+
+//////////////////////////////////////////////djikstra time based   
+// std::vector<int> Graph::Djikstra(SRTP sp,bool &possible,double & mtbd){
+    //    int n = Nodes.size();
+//    std::priority_queue<std::pair<double,int>,int> min_heap;
+//    std::vector<int>time(n,INF);
+//    std::vector<int>parent(n,-1);
+//    time[sp.source]=0;
+//    min_heap.push(std::make_pair(0,sp.source));
+
+//    while(!min_heap.empty()){
+    //         auto [t,u] = min_heap.top();
+    //         min_heap.pop();
+    //         if(t > time[u]) continue;
+    //         for(auto &e: adj[u]){
+        //             if(!sp.forbidden_road_types[e->road_type] && !sp.forbidden_nodes[e->v]){
+            //                 if(e->v == sp.target)possible = true;
+            //                 int v = e->v;
+//                 double tt = calc_time(t,e.length,e.speed_profile);
+//                 if(time[v]> time[u]+tt){
+    //                     time[v] = time[u] + tt;
+    //                     parent[v] = u;
+    //                     min_heap.push(std::make_pair(time[v],u));
+    //             }
+    //             }
+    //         }
+    //    }
+    //    std::vector<int>path;
+    //    if(!possible) return path;
+    //    for(int i = sp.target; i!=-1; i = parent[i]){
+//         path.push_back(i);
+//    }
+//    std::reverse(path.begin(),path.end());
+//    return path;
+// }
+//////////////////////////////////////////////////////////////A*
+// std::vector<int> Graph::A_starimpl(SRTP sp, bool &possible, double & mtbd){
+//     int n = Nodes.size();
+//     possible = false; // Ensure it starts as false
+    
+//     std::priority_queue<std::pair<double,int>,
+//                         std::vector<std::pair<double,int>>,
+//                         std::greater<std::pair<double,int>>> min_heap;
+    
+//     std::vector<double> dist(n, INF);
+//     std::vector<int> parent(n, -1);
+    
+//     // Pre-calculate heuristics
+//     std::vector<double> h = euclidean_distance_to(sp.target);
+    
+//     dist[sp.source] = 0;
+//     // Push Start Node: (f_score, u) -> (0 + h, source)
+//     min_heap.push(std::make_pair(dist[sp.source] + h[sp.source], sp.source));
+    
+//     while(!min_heap.empty()){
+//         auto [d, u] = min_heap.top();
+//         min_heap.pop();
+        
+//         // ERROR WAS HERE: You must compare d (f-score) vs dist + h (f-score)
+//         if (d > dist[u] + h[u]) continue;
+        
+//         // If we reached the target, we are done. 
+//         if (u == sp.target) {
+//             possible = true; // Set your required flag here
+//             break;
+//         }
+        
+//         for(auto &e: adj[u]){
+//              if(! (sp.forbidden_road_types[e->road_type]) && !sp.forbidden_nodes[e->v])
+//              {
+//                  int v = e->v;
+//                  double length = e->length;
+                 
+//                  // Standard Relaxation
+//                  if(dist[v] > dist[u] + length){
+//                      dist[v] = dist[u] + length;
+//                      parent[v] = u;
+//                      // Push new f-score (dist[v] + h[v])
+//                      min_heap.push(std::make_pair(dist[v] + h[v], v));
+//                  }
+//              }
+//         }
+//     }
+    
+//     std::vector<int> path;
+    
+//     // Use your 'possible' flag check
+//     if(!possible) return path;
+    
+//     for(int i = sp.target; i != -1; i = parent[i]){
+//         path.push_back(i);
+//     }
+//     std::reverse(path.begin(), path.end());
+//     return path;
+// }
+
+///////////////////////////////////////////////////single direction djikstra
+
+
+
 // std::vector<int> Graph::A_starimpl(SRTP sp,bool &possible,double & mtbd){
 //  int n = Nodes.size();
 // std::priority_queue<std::pair<double,int>,
@@ -269,3 +387,4 @@ std::vector<int> Graph::A_starimpl(SRTP sp, bool &possible, double & mtbd){
 //        std::reverse(path.begin(),path.end());
 //        return path;
 // }
+//////////////////////////////////////////////////////////////A*

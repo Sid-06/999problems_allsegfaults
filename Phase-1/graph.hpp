@@ -21,9 +21,10 @@ struct Node{
     Node(int i, double la, double lo, const json& pois) 
         : id(i), lat(la), lon(lo) {
         for (const auto& p : pois) {
+            if(p != " ")
             poi.insert(p);
         }
-}
+    }
 };
 struct Edge{
     int id;
@@ -33,6 +34,7 @@ struct Edge{
     std::vector<double>speed_profile;
     bool oneway;
     std::string road_type;
+    bool active = true;
     Edge(){}
     Edge(int i, int u_, int v_, double len, double time, 
          const json& speed, bool one, const std::string& type) 
@@ -49,42 +51,48 @@ class Graph
 private:
 int N;
 std::vector<Node*> Nodes;
+std::vector<Edge*> Edges;
 std::vector<std::vector<Edge*>> adj;
 std::vector<std::vector<Edge*>> adj_r;
+
 public:
-  Graph(const json& graph_json);
-  json process_query(const json& query);
-  json handleRemoveEdge(const json& query);
-  json handleModifyEdge(const json& query);
-  std::vector<int> handleShortesPath(SRTP sp,bool &possible,double & mtbd);
-  std::vector<double> euclidean_distance_to(int target); 
+    Graph(const json& graph_json);
+    json process_query(const json& query);
+    json handleRemoveEdge(const json& query);
+    json handleModifyEdge(const json& query);
+    //siddu
+    std::vector<int> handleShortesPath(SRTP sp,bool &possible,double & mtbd); //for mode =distance
+    std::vector<int> A_star_time(SRTP sp,bool &possible,double & mtbd); //for mode = time
+    //helper
+    std::vector<double> euclidean_distance_to(int target);
+    //double Graph::get_haversine_dist(int u_id,int v_id);
+    //Nitheesh
+    std::vector<int> handleKnn(KNN knn); //knn
 
-  std::vector<int> Djikstra(SRTP sp,bool &possible,double & mtbd);
-  std::vector<int> handleKnn(KNN knn);
-  std::vector<int> A_starimpl(SRTP sp,bool &possible,double & mtbd);
-  std::vector<std::pair<std::vector<int>,double>> k_shortest_paths_heustirics(KSP_H ksp);
-  std::vector<std::pair<std::vector<int>,double>> k_shortest_paths_exact(KSP_E ksp);
-  std::vector<Node*> getNodes(){ return Nodes; }
-    
-    void printSampleData() const {
-        // Print first 5 nodes
-        std::cout << "\nFirst 5 nodes:\n";
-        for(int i = 0; i < std::min(5, (int)Nodes.size()); i++) {
-            std::cout << "Node " << Nodes[i]->id << ": lat=" << Nodes[i]->lat 
-                     << ", lon=" << Nodes[i]->lon << "\n";
-        }
+    //phase2
+    //nit
+    std::vector<std::pair<std::vector<int>,double>> k_shortest_paths_heustirics(KSP_H ksp);
+    //siddu
+    std::vector<std::pair<std::vector<int>,double>> k_shortest_paths_exact(KSP_E ksp);
+    std::vector<int> A_starimpl(SRTP sp,bool &possible,double & mtbd);
+    //helper
+    std::vector<Node*> getNodes(){ return Nodes; }
+    // void printSampleData() const {
+    //     // Print first 5 nodes
+    //     std::cout << "\nFirst 5 nodes:\n";
+    //     for(int i = 0; i < std::min(5, (int)Nodes.size()); i++) {
+    //         std::cout << "Node " << Nodes[i]->id << ": lat=" << Nodes[i]->lat 
+    //                  << ", lon=" << Nodes[i]->lon << "\n";
+    //     }
         
-        // Print first 5 edges of first node
-        std::cout << "\nFirst 5 edges of node 0:\n";
-        if(!adj.empty() && !adj[0].empty()) {
-            for(int i = 0; i < std::min(5, (int)adj[0].size()); i++) {
-                std::cout << "Edge " << adj[0][i]->id << ": " 
-                         << adj[0][i]->u << " -> " << adj[0][i]->v 
-                         << " (length: " << adj[0][i]->length << ")\n";
-            }
-        }
-    }
-  
-   
-
+    //     // Print first 5 edges of first node
+    //     std::cout << "\nFirst 5 edges of node 0:\n";
+    //     if(!adj.empty() && !adj[0].empty()) {
+    //         for(int i = 0; i < std::min(5, (int)adj[0].size()); i++) {
+    //             std::cout << "Edge " << adj[0][i]->id << ": " 
+    //                      << adj[0][i]->u << " -> " << adj[0][i]->v 
+    //                      << " (length: " << adj[0][i]->length << ")\n";
+    //         }
+    //     }
+    // }
 };
