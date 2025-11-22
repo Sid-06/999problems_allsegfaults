@@ -1,9 +1,12 @@
 #pragma once
-#include "graph.hpp"
+#ifndef KDTREE_H
+#define KDTREE_H
+
 #include <vector>
 #include <string>
 #include <set>
 
+class Graph; 
 
 struct kdnode{
     int id;
@@ -13,16 +16,16 @@ struct kdnode{
     kdnode* left = nullptr;
     kdnode* right = nullptr;
 
-    kdnode(int id_, double lat_, double lon_, const std::set<std::string>& poi_) : id(id_), poi(poi_), lat(lat_), lon(lon_), left(nullptr), right(nullptr) {}
-    
+    kdnode(int id_, double lat_, double lon_, const std::set<std::string>& poi_) 
+        : id(id_), poi(poi_), lat(lat_), lon(lon_), left(nullptr), right(nullptr) {}
 };
 
 class kdtree
 {
 private:
-
     kdnode* root;
-   
+       
+    const Graph* g; 
 
     // Helpers
     kdnode* buildRecursive(std::vector<kdnode*>& points, int depth);
@@ -30,17 +33,15 @@ private:
     void clear(kdnode* node);
 
 public:
-    kdtree();                           
-    ~kdtree();                         
+    kdtree();                       
+    ~kdtree();                      
+    kdnode* buildtree(Graph& graph); 
 
-    kdnode* buildtree(const Graph graph); // Builds the KD-tree
+    void add(const kdnode& node); 
+    bool empty(); 
+    kdnode* getRoot(); 
 
-    void add(const kdnode& node); // adds a new node
-
-    bool empty(); // check is empty
-
-    kdnode* getRoot(); // return root
-
-    std::vector<kdnode*> knn(const kdnode* root, const kdnode& target, int k) ;
+    std::vector<kdnode*> knn(const kdnode* root, const kdnode& target, int k, const std::string& target_poi) ;
 };
 
+#endif

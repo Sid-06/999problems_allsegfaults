@@ -1,16 +1,15 @@
 #pragma once
-#include "srtp.hpp"
 #include<unordered_map>
 #include<vector>
 #include<iostream>
 #include<utility>
 #include<queue>
 #include<set>
-#include "../Phase-2/K_shortest_paths.h"
+#include<list>
+#include "srtp.hpp"
 #include "knn.h"
-
-
-#include "nlohmann/json.hpp"
+#include "kdt.h"
+#include "common/nlohmann/json.hpp"
 #define M_PI 3.14159265358979323846
 using json = nlohmann::json;
 ///////////////////////////////////////////////////////////////
@@ -50,49 +49,39 @@ class Graph
 {
 private:
 int N;
+int current_token;
+bool alt_initialized = false;
 std::vector<Node*> Nodes;
 std::vector<Edge*> Edges;
+std::vector<int> edge_visited_token;
+std::map<std::pair<int,int>,Edge*> edge_lookup;
 std::vector<std::vector<Edge*>> adj;
 std::vector<std::vector<Edge*>> adj_r;
-
+kdtree* kd_tree;
+std::vector<int>  landmarks;
+std::vector<std::vector<double>> dist_from_landmark;
+std::vector<std::vector<double>> dist_to_landmark;
 public:
     Graph(const json& graph_json);
     json process_query(const json& query);
     json handleRemoveEdge(const json& query);
     json handleModifyEdge(const json& query);
-    //siddu
-    std::vector<int> handleShortesPath(SRTP sp,bool &possible,double & mtbd); //for mode =distance
-    std::vector<int> A_star_time(SRTP sp,bool &possible,double & mtbd); //for mode = time
-    //helper
-    std::vector<double> euclidean_distance_to(int target);
-    //double Graph::get_haversine_dist(int u_id,int v_id);
-    //Nitheesh
-    std::vector<int> handleKnn(KNN knn); //knn
-
+    //phase1
+    std::vector<int> handleShortesPath(SRTP sp,bool &possible,double & mtbd); //task1//for mode =distance
+    std::vector<int> A_star_time(SRTP sp,bool &possible,double & mtbd); //task1//for mode = time
+    std::vector<int> handleKnn(KNN knn); //task2
     //phase2
-    //nit
-    std::vector<std::pair<std::vector<int>,double>> k_shortest_paths_heustirics(KSP_H ksp);
-    //siddu
-    std::vector<std::pair<std::vector<int>,double>> k_shortest_paths_exact(KSP_E ksp);
-    std::vector<int> A_starimpl(SRTP sp,bool &possible,double & mtbd);
-    //helper
+    // std::list<std::pair<double,std::vector<int>>> handle_K_ShortestPaths(SRTP sp, int K);//task1
+    // std::vector<std::pair<std::vector<int>,double>> k_shortest_paths_heustirics(KSP_H ksp);//task2
+    // double weighted_a_star(int source, int target,double epsilon,double timeout);//task3
+    //helpers
     std::vector<Node*> getNodes(){ return Nodes; }
-    // void printSampleData() const {
-    //     // Print first 5 nodes
-    //     std::cout << "\nFirst 5 nodes:\n";
-    //     for(int i = 0; i < std::min(5, (int)Nodes.size()); i++) {
-    //         std::cout << "Node " << Nodes[i]->id << ": lat=" << Nodes[i]->lat 
-    //                  << ", lon=" << Nodes[i]->lon << "\n";
-    //     }
-        
-    //     // Print first 5 edges of first node
-    //     std::cout << "\nFirst 5 edges of node 0:\n";
-    //     if(!adj.empty() && !adj[0].empty()) {
-    //         for(int i = 0; i < std::min(5, (int)adj[0].size()); i++) {
-    //             std::cout << "Edge " << adj[0][i]->id << ": " 
-    //                      << adj[0][i]->u << " -> " << adj[0][i]->v 
-    //                      << " (length: " << adj[0][i]->length << ")\n";
-    //         }
-    //     }
-    // }
+    //phase1//task1 helpers
+    std::vector<double> euclidean_distance_to(int target);
+    double get_haversine_dist(int u_id,int v_id);
+    //phase2//task2 helpers
+    //std::vector<int> A_starimpl(SRTP sp,bool &possible,double & mtbd);
+    //phase2//task3 helpers
+    // void precompute_alt();
+    // double get_alt_heuristic(int u, int target);
 };

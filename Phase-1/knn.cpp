@@ -1,14 +1,13 @@
 #include "graph.hpp"   
-#include "knn.h"              
+#include "knn.h"      
+#include "kdt.h"        
 #include <vector>                // for std::vector
 #include <cmath>                 // distance computations
 #include <algorithm>             // sort distances
 #include <queue>                 // priority queue
+#include <utility>               // pair
 
-
-double INF = 1e5 + 1;
-
-
+const double INF = 1e9;
 
 std::vector<int> Graph::handleKnn(KNN knn){
     std::vector<int> final_ids;
@@ -16,29 +15,18 @@ std::vector<int> Graph::handleKnn(KNN knn){
     double lon = knn.lon;
     std::string poi = knn.poi;
     int k = knn.k;
-
+    if(k == 0) return final_ids;
     if(knn.metric == "shortest_path"){
-        double a  = 1e5 ;
-        int id = -1;
-        for(int i=0;i<this->N;i++){
-            double dx = lat-this->Nodes[i]->lat;
-            double dy = lon-this->Nodes[i]->lon;
-            double d =  std::sqrt(dx*dx + dy*dy);
-            if(a > d){
-                a = d;
-                id = this->Nodes[i]->id;
-            }
-        }
+        kdnode target(0, lat, lon, {});
+        std::vector<kdnode*> start_nodes = this->kd_tree->knn(this->kd_tree->getRoot(),target,1, "");
 
-        if (id == -1) return final_ids; 
+        if (start_nodes.empty()) return final_ids; 
+        int id = start_nodes[0]->id;
 
-        std::vector<std::pair<double,int>> distances;
-        for(int i=0;i<this->N;i++){
-            distances.push_back({INF,i});
-        }
-
+        std::vector<double> distances(this->N, INF);
         std::vector<bool> visited(N,false);
-        distances[id].first = 0.0;
+
+        distances[id] = 0.0;
         std::priority_queue< std::pair<double,int>, std::vector<std::pair<double,int>>, std::greater<std::pair<double,int>>> q;
         q.push({0.0,id});
         int count = 0;
@@ -48,7 +36,10 @@ std::vector<int> Graph::handleKnn(KNN knn){
             if(visited[o]) continue;
             visited[o] = true;
 
-            if(std::find(final_ids.begin(), final_ids.end(), Nodes[o]->id) == final_ids.end()){
+            // Optimization: If current path is longer than found, skip
+            if(du > distances[o]) continue;
+
+            if(Nodes[o]->poi.count(poi)){
                 final_ids.push_back(Nodes[o]->id);
                 count++;
                 if(count == k) break;
@@ -57,9 +48,9 @@ std::vector<int> Graph::handleKnn(KNN knn){
             for( auto node : this->adj[o] ){
                 int v = node->v;
                 double w = node->length;
-                if(du + w < distances[v].first){
-                    distances[v].first = du + w;
-                    q.push({distances[v].first,v});
+                if(du + w < distances[v]){
+                    distances[v] = du + w;
+                    q.push({distances[v],v});
                 }
             }
         }
@@ -84,3 +75,4 @@ std::vector<int> Graph::handleKnn(KNN knn){
 
     return final_ids;
 }
+

@@ -1,0 +1,2027 @@
+{
+    "meta": {
+        "id": "testcase_1_queries"
+    },
+    "results": [
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.002375
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000601
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000441
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00043
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000461
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000431
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000381
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000411
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000401
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000421
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000431
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000421
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00038
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000381
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000321
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000361
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00039
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00039
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000311
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000401
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000381
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000481
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000401
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00039
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00034
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000381
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000421
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000391
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00038
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00038
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000381
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000361
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00035
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00036
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00034
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000381
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00045
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000431
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00036
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00037
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.0003
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000301
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00038
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00034
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000431
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000321
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000411
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000381
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000391
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000361
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000291
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000291
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000321
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000321
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000391
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00037
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000481
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00034
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000411
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000401
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00038
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00036
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00038
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00036
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00039
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.0004
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000311
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000281
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00042
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00032
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00031
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000311
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000381
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00032
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000461
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000291
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00031
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000361
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00035
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00034
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00041
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000361
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00039
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000311
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000361
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000361
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000411
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000381
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000481
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000441
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00037
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000391
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00034
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000311
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000311
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00032
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00032
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000411
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00034
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000311
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00032
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000391
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000421
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00028
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000311
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000361
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000381
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000391
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00037
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00037
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000361
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.0004
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00036
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000361
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000411
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000471
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000361
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000511
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00034
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00037
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00031
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000321
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.0003
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00028
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000321
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00053
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000391
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000431
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000411
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000401
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000361
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00037
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000361
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00035
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000471
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000311
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00038
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000381
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000421
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000361
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.0003
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000431
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000321
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000311
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000301
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.0003
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00038
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00036
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000361
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000481
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00029
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000281
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000321
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00034
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00029
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000361
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00034
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00043
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000441
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000391
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000441
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000361
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000411
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000521
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000311
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00034
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00039
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00039
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00032
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00032
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000321
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000301
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.0003
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00032
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000321
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.0003
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00047
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00034
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000321
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000311
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00031
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.0003
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00059
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000431
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000381
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000391
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000281
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00037
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.0003
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00031
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00032
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00032
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000311
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00032
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00032
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00032
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00032
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00034
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000291
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000321
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00035
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00035
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000311
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.0003
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000431
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00034
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00028
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000301
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000391
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000381
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000311
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00032
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00037
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00041
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00039
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00034
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000281
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000421
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000361
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000361
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000381
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000361
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000381
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00031
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000411
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00034
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000471
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00036
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00036
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000401
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00042
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00035
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00036
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.0004
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000401
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000401
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000391
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000441
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.0004
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00029
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000291
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.0003
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000311
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00031
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000311
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000321
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00036
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00037
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.0003
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00031
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000321
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00028
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00038
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000421
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00036
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.0003
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000401
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000281
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00034
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00032
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000321
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000291
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000401
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000391
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000411
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000381
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000381
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000381
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00035
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00035
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000421
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000381
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000321
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000321
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00036
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00034
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000301
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000321
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000321
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.0003
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000301
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000441
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00032
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000401
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000321
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00035
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00038
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00032
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00042
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000411
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000391
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000301
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000401
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00037
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00037
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00035
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00041
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000411
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000381
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000391
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000431
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000311
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.0003
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000411
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000311
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00028
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000301
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00029
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00032
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000661
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00036
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000401
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00042
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000361
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000311
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00032
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00032
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00034
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000431
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00031
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00032
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00027
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000281
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00035
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00034
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00041
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000441
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00036
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000311
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000301
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00032
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00029
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000381
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000441
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000311
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00042
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000291
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000311
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00036
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000381
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00039
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000381
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000401
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000441
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00035
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00034
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00046
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000391
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000371
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00035
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00031
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00048
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00037
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000391
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000311
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000341
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00035
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.0004
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.00041
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000431
+        },
+        {
+            "error": "unsupported query type: shortest_path",
+            "processing_time": 0.000331
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.000351
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000391
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.000321
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00032
+        },
+        {
+            "error": "unsupported query type: remove_edge",
+            "processing_time": 0.00033
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.00037
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.00038
+        },
+        {
+            "error": "unsupported query type: knn",
+            "processing_time": 0.0004
+        },
+        {
+            "error": "unsupported query type: modify_edge",
+            "processing_time": 0.000391
+        }
+    ]
+}

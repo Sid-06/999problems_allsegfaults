@@ -31,10 +31,29 @@ kdnode* kdtree::buildRecursive(std::vector<kdnode*>& points, int depth){
 }
 
 kdnode* kdtree::insertRecursive(kdnode* root, kdnode* node, int depth){
-    return nullptr;
+    if (root == nullptr) {
+        return node;
+    }
+    bool splitByLat = (depth % 2 == 0);
+
+    if (splitByLat) {
+        if (node->lat < root->lat) {
+            root->left = insertRecursive(root->left, node, depth + 1);
+        } else {
+            root->right = insertRecursive(root->right, node, depth + 1);
+        }
+    } else {
+        if (node->lon < root->lon) {
+            root->left = insertRecursive(root->left, node, depth + 1);
+        } else {
+
+            root->right = insertRecursive(root->right, node, depth + 1);
+        }
+    }
+    return root;
 }
 
-kdnode* kdtree::buildtree(Graph graph){
+kdnode* kdtree::buildtree(Graph& graph){
     std::vector<kdnode*> kdNodes;
     for (auto node : graph.getNodes()) {
         if (node == nullptr) continue;
@@ -42,7 +61,8 @@ kdnode* kdtree::buildtree(Graph graph){
         kdnode* k = new kdnode(node->id,node->lat,node->lon,node->poi);
         kdNodes.push_back(k);
     }
-    return buildRecursive(kdNodes,0);
+    root = buildRecursive(kdNodes,0);
+    return root;
 }
 
 void kdtree::add(const kdnode& node){
@@ -74,28 +94,35 @@ double distanceSquared(const kdnode* a, const kdnode* b) {
 
 
 void knnSearch(const kdnode* root, const kdnode& target, int depth, int k,
+                        const std::string& target_poi,
                       std::priority_queue<std::pair<double, const kdnode*>>& maxHeap) {
     if (!root) return;
     double dist = distanceSquared(root, &target);
-    maxHeap.push({dist, root});
-    if ((int)maxHeap.size() > k)
-        maxHeap.pop(); 
+
+    if (target_poi.empty() || root->poi.count(target_poi)) { 
+        maxHeap.push({dist, root});
+        if ((int)maxHeap.size() > k) {
+            maxHeap.pop(); 
+        }
+    }
+
     bool splitByLat = (depth % 2 == 0);
     double diff = splitByLat ? target.lat - root->lat : target.lon - root->lon;
 
     const kdnode* next = (diff < 0) ? root->left : root->right;
     const kdnode* other = (diff < 0) ? root->right : root->left;
 
-    knnSearch(next, target, depth + 1, k, maxHeap);
+    knnSearch(next, target, depth + 1, k,target_poi, maxHeap);
+    double currentWorstDist = (maxHeap.empty()) ? INFINITY : maxHeap.top().first;
 
-    if ((int)maxHeap.size() < k || diff * diff < maxHeap.top().first)
-        knnSearch(other, target, depth + 1, k, maxHeap);
+    if ((int)maxHeap.size() < k || diff * diff < currentWorstDist)
+        knnSearch(other, target, depth + 1, k, target_poi, maxHeap);
 }
 
 
-std::vector<kdnode*> kdtree::knn(const kdnode* root, const kdnode& target, int k) {
+std::vector<kdnode*> kdtree::knn(const kdnode* root, const kdnode& target, int k,const std::string& target_poi) {
     std::priority_queue<std::pair<double, const kdnode*>> maxHeap;
-    knnSearch(root, target, 0, k, maxHeap);
+    knnSearch(root, target, 0, k, target_poi, maxHeap);
 
     std::vector<kdnode*> result;
     while (!maxHeap.empty()) {
@@ -106,4 +133,5 @@ std::vector<kdnode*> kdtree::knn(const kdnode* root, const kdnode& target, int k
     std::reverse(result.begin(), result.end());
     return result;
 }
+
 

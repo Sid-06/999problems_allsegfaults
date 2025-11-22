@@ -17,4 +17,8 @@ struct SRTP{
     {"tertiary",false},
     {"local",false}
     };
-};
+//    SRTP(int id, int source, int target, const std::string& mode,
+//          const std::set<std::pair<int,int>>& forbidden_edges = {})
+//         : id(id), source(source), target(target), mode(mode),
+//           forbidden_edges(forbidden_edges) {}
+    };
